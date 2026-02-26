@@ -19,25 +19,29 @@ enableScreens();
 
 const Stack = createStackNavigator();
 
+import { View } from 'react-native';
+
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="Dashboard" component={DashboardScreen} />
-          <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
-          <Stack.Screen name="EventDetail" component={EventDetailScreen} />
+    <View style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="Dashboard" component={DashboardScreen} />
+            <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
+            <Stack.Screen name="EventDetail" component={EventDetailScreen} />
 
-          {/* ✅ NEW SCREENS */}
-          <Stack.Screen name="Tickets" component={TicketSelectionScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
+            {/* ✅ NEW SCREENS */}
+            <Stack.Screen name="Tickets" component={TicketSelectionScreen} />
+            <Stack.Screen name="Register" component={RegisterScreen} />
 
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </View>
   );
 }
